@@ -1,11 +1,8 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        
         adj = {}
         for el in prerequisites:
             adj[el[0]] = adj.get(el[0], []) + [el[1]]
-        
-        print('adj', adj)
 
         canAllBeDone = True
         def dfs(curr, visited): 
