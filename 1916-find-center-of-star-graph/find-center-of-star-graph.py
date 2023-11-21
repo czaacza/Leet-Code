@@ -1,6 +1,5 @@
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
-        print('edges', edges)
         seen = {}
 
         for i in range(len(edges)):
