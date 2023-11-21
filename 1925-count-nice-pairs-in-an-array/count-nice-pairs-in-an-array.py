@@ -6,21 +6,24 @@ class Solution:
                 reversed_str += s[i]
             return int(reversed_str)
 
-        rev_values = {}
+        rev_values = []
         for i in range(len(nums)):
-            minus = nums[i] - rev(str(nums[i]))
+            rev_values.append(nums[i] - rev(str(nums[i])))
 
-            if minus not in rev_values:
-                rev_values[minus] = []
-
-            rev_values[minus].append(i)
-
-        res = 0
         seen = {}
-        for arr in rev_values.values():
-            res += len(arr) * (len(arr) - 1) // 2
+        res = 0
+        for val in rev_values:
+            if val not in seen: 
+                seen[val] = 1
+                continue
+
+            res += seen[val]
+            seen[val] += 1
 
         return res % (10**9 + 7)
+
+            
+
 
 
 
