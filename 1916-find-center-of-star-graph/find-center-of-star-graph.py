@@ -1,18 +1,17 @@
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
-        graph = {}
+        print('edges', edges)
+        seen = {}
 
         for i in range(len(edges)):
-            if edges[i][0] not in graph:
-                graph[edges[i][0]] = []
-            if edges[i][1] not in graph:
-                graph[edges[i][1]] = []
-            graph[edges[i][0]].append(edges[i][1])
-            graph[edges[i][1]].append(edges[i][0])
-        
-        for node, neig in graph.items():
-            if len(neig) > 1:
-                return node
+            seen[edges[i][0]] = seen.get(edges[i][0], 0) + 1
+            seen[edges[i][1]] = seen.get(edges[i][1], 0) + 1
+
+            if seen[edges[i][0]] > 1:
+                return edges[i][0]
+            elif seen[edges[i][1]] > 1:
+                return edges[i][1]
+
             
     
 
