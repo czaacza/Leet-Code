@@ -2,7 +2,7 @@ class Solution:
     def findDiagonalOrder(self, nums: List[List[int]]) -> List[int]:
         ROWS = len(nums)
         COLS = len(nums[0])
-        max_sum = (ROWS + COLS) * 100
+        max_sum = (ROWS + COLS) * 10
         
         sums = [-1] * max_sum
 
