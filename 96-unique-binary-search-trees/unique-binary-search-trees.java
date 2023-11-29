@@ -31,10 +31,6 @@ class Solution {
         }
         
         nums[n] = total;
-        System.out.println("\nnums");
-        for (i = 0; i < n; i ++){
-            System.out.print(nums[i] + " ");
-        }
         return total;
     }
     
