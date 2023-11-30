@@ -5,7 +5,6 @@ class Solution:
             print('l', ord(l))
             if ord(l) >= 97 and ord(l) <= 122 or ord(l) >= 48 and ord(l) <= 57:
                 res += l
-        print('res', res)
         for i in range(len(res)):
             if res[i] != res[-1-i]:
                 return False
