@@ -18,7 +18,7 @@ class Solution:
                     continue
                     
                 if dist > maxDistance:
-                    continue
+                    return len(shortest) - 1
                     
                 shortest[curr] = dist
                                 
