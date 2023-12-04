@@ -6,6 +6,8 @@ class Solution:
         while i <= len(num)-3:
             if num[i] == num[i+1] and num[i+1] == num[i+2]:
                 max_num = max(max_num, num[i])
+                i += 3
+                continue
                 
             i += 1
             
