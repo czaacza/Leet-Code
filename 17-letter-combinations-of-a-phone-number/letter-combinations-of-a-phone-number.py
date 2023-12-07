@@ -20,12 +20,9 @@ class Solution:
         for d in digits:
             letters.append(mapping[int(d)])
         
-        # print('letters', letters)
         res = []
         
         def comb(letters, res, lvl, curr_str):
-            # print('comb, curr_str', curr_str)
-            # print('lvl', lvl)
             if lvl == len(letters):
                 res.append(curr_str)
                 return
