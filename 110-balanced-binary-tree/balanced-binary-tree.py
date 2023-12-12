@@ -15,9 +15,7 @@ class Solution:
             right_h = dfs(node.right)
             
             if abs(left_h - right_h) > 1:
-                isTreeBalanced[0] = False
-                return max(left_h , right_h) + 1
-                
+                isTreeBalanced[0] = False                
             
             return max(left_h , right_h) + 1
         
