@@ -2,26 +2,22 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         
-        def backtrack(arr):
+        def backtrack(arr, i):
             nonlocal res
-            curr_sum = sum(candidates[i] for i in arr)
+            curr_sum = sum(arr)
+            if i == len(candidates):
+                return
             if curr_sum == target:
                 res.append(arr)
                 return
             elif curr_sum > target:
                 return
             
-            min_el_i = 0 if not arr else arr[-1]
-            for i in range(min_el_i, len(candidates)):
-                backtrack(arr + [i])
+            for i in range(i, len(candidates)):
+                backtrack(arr + [candidates[i]], i)
                 
-        backtrack([])
-        newRes = []
-        
-        for arr in res:
-            newRes.append([candidates[i] for i in arr])
-        
-        return newRes
+        backtrack([], 0)
+        return res
                 
                     
         
