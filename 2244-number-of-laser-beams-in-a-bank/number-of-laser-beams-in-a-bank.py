@@ -2,21 +2,20 @@ class Solution:
     def numberOfBeams(self, bank: List[str]) -> int:
         ROWS = len(bank)
         COLS = len(bank[0])
-        prev = []
+        prev = 0
         res = 0
         for r in range(ROWS):
             curr_row = bank[r]
-            curr = []
+            curr = 0
             for el in curr_row:
                 if el == '1':
-                    curr.append(el)
+                    curr += 1
             
-            if len(curr) == 0:
+            if curr == 0:
                 continue
             
-            res += (len(prev) * len(curr))
-
-            prev = curr.copy()
+            res += (prev * curr)
+            prev = curr
 
         return res
 
