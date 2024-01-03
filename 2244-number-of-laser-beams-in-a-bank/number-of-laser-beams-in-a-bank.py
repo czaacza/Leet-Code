@@ -1,7 +1,6 @@
 class Solution:
     def numberOfBeams(self, bank: List[str]) -> int:
         ROWS = len(bank)
-        COLS = len(bank[0])
         prev = 0
         res = 0
         for r in range(ROWS):
